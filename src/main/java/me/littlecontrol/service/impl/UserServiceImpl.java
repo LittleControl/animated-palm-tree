@@ -1,26 +1,32 @@
 package me.littlecontrol.service.impl;
 
+import me.littlecontrol.dao.StudentDao;
 import me.littlecontrol.dao.UserDao;
-import me.littlecontrol.dao.impl.UserDaoImpl;
 import me.littlecontrol.service.UserService;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
 public class UserServiceImpl implements UserService, InitializingBean, DisposableBean {
-    private final UserDao userDao = new UserDaoImpl();
+    private UserDao userDao;
+    private StudentDao studentDao;
 
-    public UserServiceImpl() {
-        System.out.println("UserServiceImpl Constructor");
+//    public UserServiceImpl() {
+//        System.out.println("UserServiceImpl Constructor");
+//    }
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
     }
 
+    public void setStudentDao(StudentDao studentDao) {
+        this.studentDao = studentDao;
+    }
+
+    @Override
     public void save() {
         System.out.println("Service Saving");
         userDao.save();
-
-    }
-
-    public void setUserDao(UserDaoImpl userDao) {
-        System.out.println("setUserDao");
+        studentDao.check();
     }
 
     @Override

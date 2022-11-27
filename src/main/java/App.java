@@ -1,4 +1,3 @@
-import me.littlecontrol.dao.UserDao;
 import me.littlecontrol.service.UserService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -24,10 +23,10 @@ public class App {
 //        studentDao3.check();
 
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
-        UserDao userDao = (UserDao) ctx.getBean("dao");
+//        UserDao userDao = (UserDao) ctx.getBean("dao");
         UserService userDaoService = (UserService) ctx.getBean("service");
-        userDao.save();
+        userDaoService.save();
 //        ctx.registerShutdownHook();
-        ctx.close();
+//        ctx.close();
     }
 }
