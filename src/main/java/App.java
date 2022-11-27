@@ -13,8 +13,14 @@ public class App {
 //        System.out.println(userDao1);
 //        System.out.println(userService);
 //        System.out.println(userService1);
+//
+//        StudentDao studentDao = (StudentDao) ctx.getBean("studentDao");
+//        studentDao.check();
 
-        StudentDao studentDao = (StudentDao) ctx.getBean("studentDao");
-        studentDao.check();
+//        StudentDao studentDao2 = (StudentDao) ctx.getBean("studentDao2");
+//        studentDao2.check();
+
+        StudentDao studentDao3 = (StudentDao) ctx.getBean("studentDao3");
+        studentDao3.check();
     }
 }

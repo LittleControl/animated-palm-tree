@@ -14,4 +14,11 @@
 
     <!--    工厂函数实例化bean-->
     <bean id="studentDao" class="me.littlecontrol.factory.StudentDaoFactory" factory-method="getStudentDao"/>
+
+    <!--    使用实例工厂实例化bean-->
+    <bean id="studentFactory" class="me.littlecontrol.factory.StudentDao2Factory"/>
+    <bean id="studentDao2" factory-bean="studentFactory" factory-method="getStudentDao"/>
+
+    <!--    使用factoryBean 实例化bean-->
+    <bean id="studentDao3" class="me.littlecontrol.factory.StudentDaoFactoryBean"/>
 </beans>
