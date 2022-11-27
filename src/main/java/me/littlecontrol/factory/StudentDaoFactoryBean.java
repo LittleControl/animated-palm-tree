@@ -8,7 +8,7 @@ public class StudentDaoFactoryBean implements FactoryBean<StudentDao> {
 
     @Override
     public StudentDao getObject() throws Exception {
-        return new StudentDaoImol();
+        return new StudentDaoImol(123, "test");
     }
 
     @Override

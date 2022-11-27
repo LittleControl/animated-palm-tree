@@ -7,18 +7,11 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
 public class UserServiceImpl implements UserService, InitializingBean, DisposableBean {
-    private UserDao userDao;
-    private StudentDao studentDao;
+    private final UserDao userDao;
+    private final StudentDao studentDao;
 
-//    public UserServiceImpl() {
-//        System.out.println("UserServiceImpl Constructor");
-//    }
-
-    public void setUserDao(UserDao userDao) {
+    public UserServiceImpl(UserDao userDao, StudentDao studentDao) {
         this.userDao = userDao;
-    }
-
-    public void setStudentDao(StudentDao studentDao) {
         this.studentDao = studentDao;
     }
 

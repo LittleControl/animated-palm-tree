@@ -5,6 +5,6 @@ import me.littlecontrol.dao.impl.StudentDaoImol;
 
 public class StudentDao2Factory {
     public StudentDao getStudentDao() {
-        return new StudentDaoImol();
+        return new StudentDaoImol(123, "test");
     }
 }

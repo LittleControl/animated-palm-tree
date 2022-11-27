@@ -4,16 +4,19 @@ import me.littlecontrol.dao.StudentDao;
 
 public class StudentDaoImol implements StudentDao {
 
-    private int stuId;
-    private String stuName;
+    private final int stuId;
+    private final String stuName;
 
-    public void setStuId(int stuId) {
+
+    public StudentDaoImol(int stuId, String stuName) {
         this.stuId = stuId;
-    }
-
-    public void setStuName(String stuName) {
         this.stuName = stuName;
     }
+
+//    public StudentDaoImol() {
+//        this.stuId = 123;
+//        this.stuName = "test";
+//    }
 
     @Override
     public void check() {
