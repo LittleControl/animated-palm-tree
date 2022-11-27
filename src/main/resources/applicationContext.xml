@@ -3,6 +3,7 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--    构造函数实例化bean-->
     <bean id="userService" name="service service2" class="me.littlecontrol.service.impl.UserServiceImpl"
           scope="prototype">
         <property name="userDao" ref="userDao"/>
@@ -10,4 +11,7 @@
 
     <!--bean scope singleon 单例模式  prototype 非单例-->
     <bean id="userDao" name="dao dao2" class="me.littlecontrol.dao.impl.UserDaoImpl" scope="singleton"/>
+
+    <!--    工厂函数实例化bean-->
+    <bean id="studentDao" class="me.littlecontrol.factory.StudentDaoFactory" factory-method="getStudentDao"/>
 </beans>
