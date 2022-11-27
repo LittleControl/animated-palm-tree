@@ -10,4 +10,12 @@ public class UserDaoImpl implements UserDao {
     public void save() {
         System.out.println("UserDao Saved!");
     }
+
+    public void init() {
+        System.out.println("init...");
+    }
+
+    public void destory() {
+        System.out.println("Destory ...");
+    }
 }

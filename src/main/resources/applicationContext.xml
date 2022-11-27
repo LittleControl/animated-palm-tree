@@ -10,7 +10,8 @@
     </bean>
 
     <!--bean scope singleon 单例模式  prototype 非单例-->
-    <bean id="userDao" name="dao dao2" class="me.littlecontrol.dao.impl.UserDaoImpl" scope="singleton"/>
+    <bean id="userDao" name="dao dao2" class="me.littlecontrol.dao.impl.UserDaoImpl" scope="singleton"
+          init-method="init" destroy-method="destory"/>
 
     <!--    工厂函数实例化bean-->
     <bean id="studentDao" class="me.littlecontrol.factory.StudentDaoFactory" factory-method="getStudentDao"/>
